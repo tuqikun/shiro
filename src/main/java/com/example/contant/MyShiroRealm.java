@@ -56,9 +56,9 @@ public class MyShiroRealm extends AuthorizingRealm {
             Map<String, Object> map = new HashMap<String, Object>();
             map.put("nickname", username);
             //密码进行加密处理  明文为  password+name
-              String paw = password+username;
-//            String pawDES = MD5.MD5Encode(paw);
-//            map.put("pswd", pawDES);
+            String paw = password+username;
+           String pawDES = MD5.MD5Encode(paw,"utf-8",true);
+           map.put("pswd", pawDES);
 
             User user = new User();
 //            user.setId("112222");
